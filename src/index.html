@@ -14,7 +14,8 @@
     <% } %>
     <responsive-child>
       <!-- content goes here -->
-
+    <div class="content">
+    <div class="albumInfo">
     <div class="albumButtons">
         <% var albums = [
         { data: "under-the-table-and-dreaming", label: "Under The Table and Dreaming" },
@@ -36,8 +37,30 @@
         </li>
        <% }) %>
       </ul>
-    </div>
+    </div><!--End of album buttons-->
 
+    <div class="albumDetails">
+      <p><span class="infoTitle">ALBUM LABEL GOES HERE</span></p>
+      <p><span class="infoTitle">Release year: </span>March 19th, 1997</p>
+      <p>6 times Multi-Platinum as of March 25th, 1997</p>
+      <p>Peaked the Billboard top 200 albums chart at #1</p>
+      <p>Grammy for best rock performance</p>
+      <p>Dave Matthews Band best selling album</p>
+    </div><!--End album info-->
+    </div> <!--end of album info-->
+
+    <div class="vote">
+        <div class="dropdown">
+            <button class="dropbtn">Dropdown</button>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </div>
+    </div> <!--end of vote-->
+
+  </div> <!--End of content-->
 
     </responsive-child>
 

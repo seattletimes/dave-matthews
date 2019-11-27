@@ -4,7 +4,7 @@ setTimeout(() => paywall(12345678), 5000);
 require("component-responsive-frame/child");
 
 var albumButtons = document.querySelectorAll(".albumButtons .albumButton");
-
+//var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "DarkSlateBlue", "OrangeRed"];
 
 //button check and uncheck
 function albumButton(){
@@ -18,6 +18,7 @@ function albumButton(){
             }
         }
         this.classList.add("checked");
+        
     }
     else{
         this.classList.remove("checked");
