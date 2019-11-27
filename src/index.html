@@ -14,6 +14,31 @@
     <% } %>
     <responsive-child>
       <!-- content goes here -->
+
+    <div class="albumButtons">
+        <% var albums = [
+        { data: "under-the-table-and-dreaming", label: "Under The Table and Dreaming" },
+        { data: "crash", label: "Crash"},
+        { data: "before-these-crowded-streets", label: "Before These Crowded Streets" },
+        { data: "everyday", label: "Everyday" },
+        { data: "busted-stuff", label: "Busted Stuff" },
+        { data: "stand-up", label: "Stand Up" },
+        { data: "big-whiskey", label: "Big Whiskey & the GrooGrux King" }, 
+        { data: "away-from-the-world", label: "Away From the World" },
+        { data: "come-tomorrow", label: "Come Tomorrow"} 
+      ] %>
+      <ul>
+       <% albums.forEach(function(album) { %>
+        <li>
+          <button type="button" class="albumButton <%= album.data %>" data-category="<%= album.data %>">
+              <span class="albumButtonLabel"><%= album.label %></span>
+          </button>
+        </li>
+       <% }) %>
+      </ul>
+    </div>
+
+
     </responsive-child>
 
     <script src="app.js" async></script>
