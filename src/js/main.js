@@ -7,9 +7,8 @@ var albumButtons = document.querySelectorAll(".albumButtons .albumButton");
 var select = document.querySelector("select");
 var submitButton = document.querySelector(".submit");
 var verify = document.querySelector(".verify");
+var stat = document.querySelector(".stat");
 
-
-//var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "DarkSlateBlue", "OrangeRed"];
 
 //button check and uncheck
 function albumButton(){
@@ -43,13 +42,29 @@ function voteDropdown(){
 }
 select.addEventListener("change", voteDropdown);
 
+
+function getCookie(name) {
+    var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+    return v ? v[2] : null;
+}
+
 function submit(){
     var vote = select.value;
-    if(vote == "default"){
+
+    if(getCookie("vote")){
+        verify.innerText = "Looks like you've already voted, come back tomorrow to vote again";
+    }
+    else if(vote == "default"){
         verify.innerText = "Please select an album";
     }
     else{
+        var albumName = select.options[select.selectedIndex].text;
+        var statNum = 50;
+        var d = new Date();
+        d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
 
+        document.cookie = "vote="+vote + "; expires=" + d.toGMTString() + ";";
+        stat.innerText = statNum + "% of voters agree that " + albumName + " is Dave Matthews Band's Best album"
     }
 }
 

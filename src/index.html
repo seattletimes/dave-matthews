@@ -50,7 +50,8 @@
     </div> <!--end of album info-->
 
     <div class="vote">
-        <div class="dropdown">
+      <p>Reader poll, what is Dave Matthews Bands Best Album</p>
+        <div class="st-input-select dropdown">
             <select name="albums">
               <option value="default">Select Album</option>
               <% albums.forEach(function(album){ %>
@@ -58,9 +59,14 @@
               <% }) %>  
             </select>
           </div>
-        <button type="submit" value="submit" class="submit">Submit</button>
+        <button type="submit" value="submit" class="voteButton submit">Submit</button>
+        <button type="button" value="view" class="voteButton viewResults">View Results</button>
         <p class="verify"></p>
     </div> <!--end of vote-->
+
+    <div class="results">
+      <p class="stat"></p>
+    </div>
 
   </div> <!--End of content-->
 
