@@ -51,13 +51,15 @@
 
     <div class="vote">
         <div class="dropdown">
-            <button class="dropbtn">Dropdown</button>
-            <div class="dropdown-content">
-              <a href="#">Link 1</a>
-              <a href="#">Link 2</a>
-              <a href="#">Link 3</a>
-            </div>
+            <select name="albums">
+              <option value="default">Select Album</option>
+              <% albums.forEach(function(album){ %>
+                <option value="<%=album.data%>"><%= album.label %></option>
+              <% }) %>  
+            </select>
           </div>
+        <button type="submit" value="submit" class="submit">Submit</button>
+        <p class="verify"></p>
     </div> <!--end of vote-->
 
   </div> <!--End of content-->
