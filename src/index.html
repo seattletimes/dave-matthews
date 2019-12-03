@@ -18,15 +18,15 @@
     <div class="albumInfo">
     <div class="albumButtons">
         <% var albums = [
-        { data: "under-the-table-and-dreaming", label: "Under The Table and Dreaming" },
+        { data: "underTheTableAndDreaming", label: "Under The Table and Dreaming" },
         { data: "crash", label: "Crash"},
-        { data: "before-these-crowded-streets", label: "Before These Crowded Streets" },
+        { data: "beforeTheseCrowdedStreets", label: "Before These Crowded Streets" },
         { data: "everyday", label: "Everyday" },
-        { data: "busted-stuff", label: "Busted Stuff" },
-        { data: "stand-up", label: "Stand Up" },
-        { data: "big-whiskey", label: "Big Whiskey & the GrooGrux King" }, 
-        { data: "away-from-the-world", label: "Away From the World" },
-        { data: "come-tomorrow", label: "Come Tomorrow"} 
+        { data: "bustedStuff", label: "Busted Stuff" },
+        { data: "standUp", label: "Stand Up" },
+        { data: "bigWhiskey", label: "Big Whiskey & the GrooGrux King" }, 
+        { data: "awayFromTheWorld", label: "Away From the World" },
+        { data: "comeTomorrow", label: "Come Tomorrow"} 
       ] %>
       <ul>
        <% albums.forEach(function(album) { %>
@@ -51,16 +51,19 @@
 
     <div class="vote">
       <p>Reader poll, what is Dave Matthews Bands Best Album?</p>
-        <div class="st-input-select dropdown">
-            <select name="albums">
+      <form name="submit-to-google-sheet">
+      <!-- <div class="st-input-select dropdown"> -->
+            <select name="album">
               <option value="default">Select Album</option>
               <% albums.forEach(function(album){ %>
                 <option value="<%=album.data%>"><%= album.label %></option>
               <% }) %>  
             </select>
-          </div>
-        <button type="submit" value="submit" class="voteButton submit">Submit</button>
-        <button type="button" value="view" class="voteButton viewResults">View Results</button>
+          <!-- </div> -->
+      <button type="submit" class="voteButton submit">Submit</button>
+    </form>   
+        
+          <button type="button" value="view" class="voteButton viewResults">View Results</button>
         <p class="verify"></p>
     </div> <!--end of vote-->
 
