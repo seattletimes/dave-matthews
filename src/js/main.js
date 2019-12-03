@@ -2,12 +2,20 @@ var paywall = require("./lib/paywall");
 setTimeout(() => paywall(12345678), 5000);
 
 require("component-responsive-frame/child");
+var discog = require("../../data/discog.sheet.json");
 
 var albumButtons = document.querySelectorAll(".albumButtons .albumButton");
 var select = document.querySelector("select");
 var submitButton = document.querySelector(".submit");
 var verify = document.querySelector(".verify");
 var stat = document.querySelector(".stat");
+
+var albumDetails = document.querySelector(".albumDetails")
+var year = document.querySelector(".year");
+var riaa = document.querySelector(".riaa");
+var billboard = document.querySelector(".billboard");
+var grammy = document.querySelector(".grammy");
+var fact = document.querySelector(".fact");
 
 
 //button check and uncheck
@@ -21,15 +29,34 @@ function albumButton(){
                 checked[x].classList.remove("checked");
             }
         }
-        this.classList.add("checked");  
+        this.classList.add("checked");
+        displayAlbuminfo(this.classList[1]);
+
     }
     else{
         this.classList.remove("checked");
     }
 }
 
+function displayAlbuminfo(cat){
+    var album;
+    for (var x = 0; x<discog.length; x++){
+        if(discog[x].data == cat){
+            album = discog[x];
+        }
+    }
+
+    year.innerText = album.year;
+    riaa.innerText = album.riaa;
+    billboard.innerText = album.billboard;
+    grammy.innerText = album.grammy;
+    fact.innerText = album.fact;
+    albumDetails.setAttribute("style", "background-color: " + album.color + ";");
+}
+
 function albumButtonListener(){
     for(var x = 0; x <albumButtons.length; x++){
+        albumButtons[x].setAttribute("style", "background-color: " + discog[x].color + ";");
         albumButtons[x].addEventListener("click", albumButton);
     }
 }
