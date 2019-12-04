@@ -24,8 +24,6 @@ var verify = document.querySelector(".verify");
 var scriptURL = 'https://script.google.com/macros/s/AKfycbyxFKs5OM9Mhr8XtVYSWVw_jIFILBjCWN2ywP6nBzPIjBKI4HA/exec'
 var form = document.forms['submit-to-google-sheet'];
 
-var voteTotals;
-
 //button check and uncheck
 function albumButton(){
     var classes = this.classList.value;
@@ -39,7 +37,6 @@ function albumButton(){
         }
         this.classList.add("checked");
         displayAlbuminfo(this.classList[1]);
-
     }
     else{
         this.classList.remove("checked");
@@ -53,7 +50,6 @@ function displayAlbuminfo(cat){
             album = discog[x];
         }
     }
-
     year.innerText = album.year;
     riaa.innerText = album.riaa;
     billboard.innerText = album.billboard;
@@ -114,21 +110,44 @@ form.addEventListener('submit', e => {
 
 function tally(voteData){
     if(voteData.length){  
-        var totals = {};
+        var totals = [];
         var length = voteData.length;
         var add;
+        var addObj = {};
 
         for(var x = 0; x < length; x++){
             add = voteData[x].album;
-            if(totals[add] >= 0){
-                totals[add] +=1;
-            } else{
-                totals[add] = 1;
-            }
-        }
+            addObj = {};
 
+            if(totals.length == 0){
+                addObj.name = add;
+                addObj.count = 1;
+                totals.push(addObj);
+                console.log("First item: " + totals);
+            }
+            else{ //problem here fresh eyes tomrorow :)
+                for(var y = 0; y < 9; y++){
+                    if(totals[y].name == add){
+                        totals[y].count += 1;
+                    }
+                    else{
+                        addObj.name = add;
+                        addObj.count = 1;
+                        totals.push(addObj);
+                    }
+                }
+            }
+
+            // if(totals[add] >= 0){
+            //     totals[add] +=1;
+            // } else{
+            //     totals[add] = 1;
+            // }
+        }
+        console.log(totals);
         return totals;
     }  
+
 }
 
 var publicSpreadSheetUrl = "https://docs.google.com/spreadsheets/d/1odzOwj1yo6HAwE4pMyvH4OkG2CR6cNcnXouPSPoLHe8/edit?usp=sharing"
@@ -141,6 +160,8 @@ function init() {
 
 function showInfo(data, tabletop) {
     var allVotes = tabletop.sheets("vote").elements
+    console.log(allVotes);
+
     var totals = tally(allVotes);
 
 //build with d3 here
