@@ -109,46 +109,33 @@ form.addEventListener('submit', e => {
   });
 
 function tally(voteData){
-    if(voteData.length){  
-        var totals = [];
+    if(voteData.length > 0){  
+        var totals =      [   { name: "underTheTableAndDreaming", count: 0},
+        { name: "crash", count: 0},
+        { name: "beforeTheseCrowdedStreets", count: 0},
+        { name: "everyday", count: 0 },
+        { name: "bustedStuff", count: 0},
+        { name: "standUp", count: 0},
+        { name: "bigWhiskey", count: 0}, 
+        { name: "awayFromTheWorld", count: 0 },
+        { name: "comeTomorrow", count: 0} ];
         var length = voteData.length;
-        var add;
-        var addObj = {};
+        var add = "";
 
         for(var x = 0; x < length; x++){
             add = voteData[x].album;
-            addObj = {};
-
-            if(totals.length == 0){
-                addObj.name = add;
-                addObj.count = 1;
-                totals.push(addObj);
-                console.log("First item: " + totals);
-            }
-            else{ //problem here fresh eyes tomrorow :)
-                for(var y = 0; y < 9; y++){
+                for(var y = 0; y < totals.length; y++){
                     if(totals[y].name == add){
+                        console.log(totals[y]);
                         totals[y].count += 1;
-                    }
-                    else{
-                        addObj.name = add;
-                        addObj.count = 1;
-                        totals.push(addObj);
                     }
                 }
             }
-
-            // if(totals[add] >= 0){
-            //     totals[add] +=1;
-            // } else{
-            //     totals[add] = 1;
-            // }
         }
-        console.log(totals);
         return totals;
     }  
 
-}
+
 
 var publicSpreadSheetUrl = "https://docs.google.com/spreadsheets/d/1odzOwj1yo6HAwE4pMyvH4OkG2CR6cNcnXouPSPoLHe8/edit?usp=sharing"
 //var voteData;
@@ -159,10 +146,10 @@ function init() {
   }
 
 function showInfo(data, tabletop) {
-    var allVotes = tabletop.sheets("vote").elements
-    console.log(allVotes);
+    var allVotes = tabletop.sheets("vote").elements;
 
     var totals = tally(allVotes);
+    console.log(data);
 
 //build with d3 here
 
