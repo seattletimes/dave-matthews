@@ -1,7 +1,10 @@
 var paywall = require("./lib/paywall");
 setTimeout(() => paywall(12345678), 5000);
 
+const Tabletop = require('tabletop');
 require("component-responsive-frame/child");
+var d3 = require("d3");
+
 var discog = require("../../data/discog.sheet.json");
 var votes = require("../../data/vote.sheet.json");
 
@@ -102,29 +105,48 @@ albumButtonListener();
 // }
 
 form.addEventListener('submit', e => {
-    e.preventDefault()
+    e.preventDefault();
     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
+      .catch(error => console.error('Error!', error.message));
+    setTimeout(function() { init(); }, 2000);
   });
 
-function tallyVotes(){
-    if(votes.length){  
-        voteTotals = {};
-        var length = votes.length;
+function tally(voteData){
+    if(voteData.length){  
+        var totals = {};
+        var length = voteData.length;
         var add;
 
         for(var x = 0; x < length; x++){
-            add = votes[x].album;
-            if(voteTotals[add] >= 0){
-                voteTotals[add] +=1;
+            add = voteData[x].album;
+            if(totals[add] >= 0){
+                totals[add] +=1;
             } else{
-                voteTotals[add] = 1;
+                totals[add] = 1;
             }
         }
+
+        return totals;
     }  
 }
 
-tallyVotes();
+var publicSpreadSheetUrl = "https://docs.google.com/spreadsheets/d/1odzOwj1yo6HAwE4pMyvH4OkG2CR6cNcnXouPSPoLHe8/edit?usp=sharing"
+//var voteData;
+function init() {
+    Tabletop.init( { key: publicSpreadSheetUrl,
+                     callback: showInfo,
+                     simpleSheet: false } )
+  }
 
+function showInfo(data, tabletop) {
+    var allVotes = tabletop.sheets("vote").elements
+    var totals = tally(allVotes);
+
+//build with d3 here
+
+
+  }
+
+init();
 
