@@ -15,7 +15,8 @@
     <responsive-child>
       <!-- content goes here -->
     <div class="content">
-    <div class="albumInfo">
+   
+    <div class="albumContainer">
     <div class="albumButtons">
         <% var albums = [
         { data: "underTheTableAndDreaming", label: "Under The Table and Dreaming" },
@@ -47,28 +48,32 @@
       <p class="grammy"></p>
       <p class="fact"></p>
     </div><!--End album info-->
-    </div> <!--end of album info-->
+
+  </div><!--end of album container-->
+ 
 
     <div class="vote">
-      <p>Reader poll, what is Dave Matthews Bands Best Album?</p>
+      <div class = "pollText"><p>Reader poll, what is Dave Matthews Bands Best Album?</p></div>
+      <div class = "voteForm">
       <form name="submit-to-google-sheet">
       <!-- <div class="st-input-select dropdown"> -->
-            <select name="album">
-              <option value="default">Select Album</option>
+            <select name="album" class="voteSelect">
+              <option value="default" class="voteOption">Select Album</option>
               <% albums.forEach(function(album){ %>
-                <option value="<%=album.data%>"><%= album.label %></option>
+                <option class="voteOption" value="<%=album.data%>"><%= album.label %></option>
               <% }) %>  
             </select>
           <!-- </div> -->
       <button type="submit" class="voteButton submit">Submit</button>
-    </form>   
-        
-          <button type="button" value="view" class="voteButton viewResults">View Results</button>
-        <p class="verify"></p>
+    </form>          
+    <button type="button" value="view" class="voteButton viewResults">View Results</button>
+  </div>
+    <p class="verify"></p>
     </div> <!--end of vote-->
 
     <div class="results">
       <p class="stat"></p>
+      <div class="svg-container"><svg width="600" height="500"></svg></div>
     </div> 
 
   </div> <!--End of content-->

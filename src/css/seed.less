@@ -3,25 +3,21 @@
 .content{
     border-top : 1px solid @df-light-gray;
     border-bottom: 1px solid @df-light-gray;
-    width: 96%;
-    margin: auto;
+    width: 100%;
 }
 
-// .albumInfo{
-
-// }
+.albumContainer{
+    text-align: center;
+    width: 100%;
+}
 
 .albumButtons{
-    //display: block;
-    //text-align: center;
+    float: left;
+    position: relative;
+    margin-right: 50px;
     ul{
         list-style-type: none;
         padding: 0;
-        width: 300;
-    }
-    li{
-        width: 300px;
-
     }
     .albumButton{
         border:none;
@@ -33,22 +29,56 @@
         outline: none;
         border-radius: 4px;
     }
-    .before-these-crowded-streets, .stand-up, .come-tomorrow{
+    .beforeTheseCrowdedStreets, .standUp, .comeTomorrow{
         color: #fdfdfd;
     }
 }
+
+.albumDetails{
+    //display: flex;
+    text-align: right;
+    float: left;
+    position: relative;
+}
+
+
+
+
 
 .checked{
     transform: translateX(42px);
     transition: all 1s ease-in-out;
 }
 
-.albumDetails{
-    max-width: 630px;
-    float: left;
+.vote {
+    text-align: center;
+    width: 100%;
+    clear: both;
+    .pollText{
+        width: 100%;
+        clear: both;
+    }
+    .voteForm{
+        width: 100%;
+        clear: both;
+    }
 }
 
+.svg-container{
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+  .bar {
+    fill: steelblue;
+  }
+  
+  .bar:hover {
+    fill: brown;
+  }
+  
+  .axis--x path {
+    display: none;
+  }
 
-.vote{
-    float:left;
-}
+
