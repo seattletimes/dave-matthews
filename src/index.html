@@ -15,7 +15,8 @@
     <responsive-child>
       <!-- content goes here -->
     <div class="content">
-   <div class="headCopy"> 
+   <div class="headCopy">
+     <h1 class="title">Explore Dave Matthews Band’s studio albums</h1> 
       <p class="chatter">
           Dave Matthews Band’s second year of Hall of Fame eligibility comes 25 years after the release of its first major-label album, “Under the Table and Dreaming.” The trade of bootleg concert recordings among fans had elevated Dave Matthews Band to idol status in the ‘90s, but it’s the band’s nine studio albums that likely caught the Rock Hall’s eye. The albums show how the band has evolved over the years, from the folk-rock spirit of “Busted Stuff” to the more pop-leaning “Everyday.” DMB’s seven most recent studio albums all debuted at No. 1 on the Billboard charts, making Dave Matthews Band the group with the most consecutive No. 1 debuts, topped only by solo acts Eminem and Kanye West. 
           Explore the studio albums and see the impact the band has made. 
@@ -72,12 +73,12 @@
  
 
     <div class="vote">
-      <div class = "pollText"><p>Reader poll, what is Dave Matthews Bands Best Album?</p></div>
+      <div class = "pollText"><p>Reader poll, what is Dave Matthews Bands best album?</p></div>
       <div class = "voteForm">
       <form name="submit-to-google-sheet" onsubmit="return false">
       <!-- <div class="st-input-select dropdown"> -->
             <select name="album" class="voteSelect">
-              <option value="default" class="voteOption">Select Album</option>
+              <option value="default" class="voteOption">Select album</option>
               <% albums.forEach(function(album){ %>
                 <option class="voteOption" value="<%=album.data%>"><%= album.label %></option>
               <% }) %>  
@@ -85,14 +86,14 @@
           <!-- </div> -->
       <button type="submit" class="voteButton submit">Submit</button>
     </form>          
-    <button type="button" value="view" class="voteButton viewResults">View Results</button>
+    <button type="button" value="view" class="voteButton viewResults">View results</button>
   </div>
     <p class="verify"></p>
     </div> <!--end of vote-->
 
     <div class="results">
       <p class="stat"></p>
-      <div class="svg-container"><svg></svg></div>
+      <div class="svg-container"><svg class="pollSvg"></svg></div>
     </div> 
 
   </div> <!--End of content-->

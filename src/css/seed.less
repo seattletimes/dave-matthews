@@ -11,6 +11,9 @@
     padding: 0 10px;
     max-width: 630px;
     margin: 14px auto;
+    .title{
+        text-align: center;
+    }
     .chatter{
         font-size: 15px;
     }
@@ -33,7 +36,7 @@
         cursor: pointer;
         font-size: 16px;
         width: 254px;
-        height: 24px;
+        height: 32px;
         margin: 0 0 1px 0;
         outline: none;
         border-radius: 4px;
@@ -47,6 +50,7 @@
 .albumDetails{
     position: relative;
     margin-left: 20%;
+    
     .defaultImage{
         width: 20%;
         position: absolute;
@@ -54,10 +58,11 @@
         top: 0;
     }
     .info{
-        // display: none;
+        display: none;
         position: absolute;
         left: 0;
         top: 0;
+        width: 60%;
         .booklet{
             width: 100%;
         }
@@ -66,7 +71,11 @@
             position: absolute;
             left: 0;
             top: 0;
-            font-size: "16px";
+            font-size: 18px;
+            p{
+
+                margin: 6px;
+            }
             .infoTitle{
                 font-weight: bold;
             }
@@ -89,6 +98,23 @@
     .voteForm{
         width: 100%;
         clear: both;
+    }
+    .voteSelect{
+        height: 32px;
+        font-size: 16px;
+        border: 1px solid #424648;
+        border-radius: 10px;
+    }
+    .voteButton{
+        font-size: 16px;
+        height: 32px;
+        outline: none;
+        border: 1px solid #424648;
+        background-color: white;
+         padding: 2px 8px;
+         border-radius: 10px;
+         cursor: pointer;
+         margin: 2px;
     }
 }
 

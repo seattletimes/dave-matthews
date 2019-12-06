@@ -36,7 +36,7 @@ function albumButton(){
 
     if(classes.indexOf("checked") == -1){
         albumDefaultImage.style.display = "none";
-        info.style.display = "inline important!";
+       
 
         var checked = document.querySelectorAll(".checked");
         if(checked.length>0){
@@ -46,6 +46,7 @@ function albumButton(){
         }
         this.classList.add("checked");
         displayAlbuminfo(this.classList[1]);
+        info.style.display = "inline";
     }
     else{
         this.classList.remove("checked");
@@ -173,7 +174,6 @@ function showInfo(data, tabletop) {
     height = 500 - margin.top - margin.bottom;
 
  
-    // reimplement
     // svg.attr("preserveAspectRatio", "xMinYMin meet")
     //     .attr("viewBox", "0 0 600 400");
 
@@ -181,17 +181,26 @@ function showInfo(data, tabletop) {
         .range([height, 0])
         .padding(0.1);
 
-    var x = d3.scaleLinear()
+    var myScale = d3.scaleLinear();    
+    var x = myScale
         .range([0, width]);
 
-    d3.selectAll("svg > *").remove();
+    d3.selectAll(".pollSvg > *").remove();
 
     var svg = d3.select(".svg-container svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
         .append("g")
         .attr("transform", 
-            "translate(" + margin.left + "," + margin.top + ")");
+            "translate(" + margin.left + "," + margin.top + ")")
+              .attr('preserveAspectRatio', 'xMinYMin meet')
+        .attr(
+            'viewBox',
+            '0 0 ' +
+            (width + margin.left + margin.right) +
+            ' ' +
+            (height + margin.top + margin.bottom)
+        );
    
     x.domain([0, d3.max(totals, function(d){ return d.count; })])
     y.domain(totals.map(function(d) { return d.label; }));
@@ -207,15 +216,30 @@ function showInfo(data, tabletop) {
         .attr("y", function(d) { return y(d.label); })
         .attr("height", y.bandwidth());
 
+
+        // bars.append("text")
+        //     .attr("class", "value")
+        //     .attr("y",  y.bandwidth() / 2)
+        //     // .attr("dx", -valueMargin + labelWidth) //margin right
+        //     // .attr("dy", ".35em") //vertical align middle
+        //     .attr("text-anchor", "end")
+        //     .text(function(d){
+        //         return ((d.count*allVotes.length));
+        //     })
+        //     .attr("x", function(d){
+        //         var width = this.getBBox().width;
+        //         return Math.max(width, myScale(d.count));
+        //     });
+
     // bars.append("text")
     //     .text(function(d) {
     //         return d.count * allVotes.length
     //     })
     //     .attr("y", function(d) {
-    //         return y(d.label);
-    //     })
-    //     .attr("x", barWidth / 2)
-    //     .style("text-anchor", "middle");
+    //         console.log(d);
+    //         console.log(y);
+    //         return y(d.label)*10;
+    //     });
     // svg.selectAll(".bar")
     //     .data(totals)
     //     .enter().append("rect")
@@ -242,4 +266,7 @@ function showInfo(data, tabletop) {
         };
 
     svg.selectAll('text').each(insertLinebreaks).attr("font-size", "12px");
+
+   
   }
+
