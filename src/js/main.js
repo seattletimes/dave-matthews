@@ -36,7 +36,6 @@ function albumButton(){
 
     if(classes.indexOf("checked") == -1){
         albumDefaultImage.style.display = "none";
-        //console.log("show info");
         info.style.display = "inline important!";
 
         var checked = document.querySelectorAll(".checked");
@@ -72,7 +71,6 @@ function displayAlbuminfo(cat){
     info.setAttribute("style", "background-color: " + album.color + ";");
 }
 
-
 function albumButtonListener(){
     for(var x = 0; x <albumButtons.length; x++){
         albumButtons[x].setAttribute("style", "background-color: " + discog[x].color + ";");
@@ -82,31 +80,28 @@ function albumButtonListener(){
 
 albumButtonListener();
 
-
-//poll section
-
 function getCookie(name) {
     var v = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
     return v ? v[2] : null;
 }
 
 function submitHandler(e){
-    // var vote = select.value;
+    var vote = select.value;
 
-    // if(vote == "default"){
-    //     verify.innerText = "Please select an album";
-    // }
-    // else if(getCookie("vote")){
-    //     verify.innerText = "Looks like you've already voted, come back tomorrow to vote again";
-    //     init();
-    //     svgContainer.style.display = "inline-block";
-    // }
-    // else{
+    if(vote == "default"){
+        verify.innerText = "Please select an album";
+    }
+    else if(getCookie("vote")){
+        verify.innerText = "Looks like you've already voted, come back tomorrow to vote again";
+        init();
+        svgContainer.style.display = "inline-block";
+    }
+    else{
         verify.innerText = "";
-        // var d = new Date();
-        // d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
+        var d = new Date();
+        d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
 
-        // document.cookie = "vote="+vote + "; expires=" + d.toGMTString() + ";";
+        document.cookie = "vote="+vote + "; expires=" + d.toGMTString() + ";"
         
         e.preventDefault();
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
@@ -114,6 +109,7 @@ function submitHandler(e){
           .catch(error => console.error('Error!', error.message));
         setTimeout(function() { init(); }, 1000);
         svgContainer.style.display = "inline-block";
+    }
 }
 
 form.addEventListener('submit', function(a){
@@ -188,11 +184,13 @@ function showInfo(data, tabletop) {
     var x = d3.scaleLinear()
         .range([0, width]);
 
-    var svg = d3.select(".svg-container").append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
-    .append("g")
-    .attr("transform", 
+    d3.selectAll("svg > *").remove();
+
+    var svg = d3.select(".svg-container svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", 
             "translate(" + margin.left + "," + margin.top + ")");
    
     x.domain([0, d3.max(totals, function(d){ return d.count; })])
@@ -245,7 +243,3 @@ function showInfo(data, tabletop) {
 
     svg.selectAll('text').each(insertLinebreaks).attr("font-size", "12px");
   }
-
-
-
-

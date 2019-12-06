@@ -1,73 +1,13 @@
 [
   {
-    "data": "underTheTableAndDreaming",
-    "label": "Under the Table and Dreaming",
-    "color": "#362254",
-    "year": "September 27, 1994",
-    "riaa": "6x Multi-Platinum March 16, 2000\nGold March 7, 1995 ",
-    "billboard": "#11",
-    "grammy": "",
-    "fact": "On DMB's first major-label album, the lead single, \"What Would You Say\", was nominated for two Grammy awards — Best Rock Vocal Performance by a Duo or Group and Best Music Video (Short Form)."
-  },
-  {
-    "data": "crash",
-    "label": "Crash",
-    "color": "#363883",
-    "year": "April 30, 1996",
-    "riaa": "7x Multi-Platinum March 16, 2000\nGold July 9, 1996",
-    "billboard": "#2",
-    "grammy": "Won a Grammy Award for  BEST ROCK PERFORMANCE BY A DUO OR GROUP WITH VOCAL for the track \"So Much to Say\"\n",
-    "fact": "By 2000, \"Crash\" had sold seven million copies making it DMB's bestselling album to date."
-  },
-  {
-    "data": "beforeTheseCrowdedStreets",
-    "label": "Before These Crowded Streets",
-    "color": "#4C77AB",
-    "year": "April 28, 1998",
-    "riaa": "4x Multi-Platinum June 15, 2018\nGold June 2, 1998",
+    "data": "comeTomorrow",
+    "label": "Come Tomorrow",
+    "color": "#000000",
+    "year": "June 8, 2018",
+    "riaa": "",
     "billboard": "#1",
     "grammy": "",
-    "fact": "The album debuted at No. 1 on the Billboard charts, ending the \"Titanic\" soundtrack's 16-week run at the top."
-  },
-  {
-    "data": "everyday",
-    "label": "Everyday",
-    "color": "#88A9B6",
-    "year": "February 27, 2001",
-    "riaa": "3x Multi-Platinum January 8, 2002\nGold April 2, 2001",
-    "billboard": "#1",
-    "grammy": "",
-    "fact": "This is the first DMB record that features Dave Matthews playing electric guitar."
-  },
-  {
-    "data": "bustedStuff",
-    "label": "Busted Stuff",
-    "color": "#A62D1C",
-    "year": "July 16, 2002",
-    "riaa": "2x Multi-Platinum August 29, 2002\nGold August 29, 2002",
-    "billboard": "#1",
-    "grammy": "Won a Grammy Award for BEST MALE ROCK VOCAL PERFORMANCE for the track \"Gravedigger\"",
-    "fact": "\"Busted Stuff\" is the first record performed entirely by the core members of the DMB; there are no featured performers."
-  },
-  {
-    "data": "standUp",
-    "label": "Stand Up",
-    "color": "#8E847B",
-    "year": "May 10, 2005",
-    "riaa": "Platinum June 23, 2005\nGold June 23, 2005",
-    "billboard": "#1",
-    "grammy": "",
-    "fact": "This is the last DMB record before saxophonist LeRoi Moore's death in 2008, though subsequent albums do feature recordings of Moore. "
-  },
-  {
-    "data": "bigWhiskey",
-    "label": "Big Whiskey & the GrooGrux King",
-    "color": "#EBD04B",
-    "year": "June 2, 2009",
-    "riaa": "Platinum August 17, 2009\nGold August 17, 2009",
-    "billboard": "#1",
-    "grammy": "",
-    "fact": "44 musicians are featured on the album, including 17 violinists."
+    "fact": "The album debuted at No. 1 on the Billboard charts, making DMB the first band to have seven consecutive No. 1 albums."
   },
   {
     "data": "awayFromTheWorld",
@@ -80,13 +20,73 @@
     "fact": "The music video for \"Mercy,\" the album's lead single, features photo and video contributions from 14,334 DMB fans."
   },
   {
-    "data": "comeTomorrow",
-    "label": "Come Tomorrow",
-    "color": "#000000",
-    "year": "June 8, 2018",
-    "riaa": "",
+    "data": "bigWhiskey",
+    "label": "Big Whiskey & the GrooGrux King",
+    "color": "#EBD04B",
+    "year": "June 2, 2009",
+    "riaa": "Platinum August 17, 2009\nGold August 17, 2009",
     "billboard": "#1",
     "grammy": "",
-    "fact": "The album debuted at No. 1 on the Billboard charts, making DMB the first band to have seven consecutive No. 1 albums."
+    "fact": "44 musicians are featured on the album, including 17 violinists."
+  },
+  {
+    "data": "standUp",
+    "label": "Stand Up",
+    "color": "#8E847B",
+    "year": "May 10, 2005",
+    "riaa": "Platinum June 23, 2005\nGold June 23, 2005",
+    "billboard": "#1",
+    "grammy": "",
+    "fact": "This is the last DMB record before saxophonist LeRoi Moore's death in 2008, though subsequent albums do feature recordings of Moore. "
+  },
+  {
+    "data": "bustedStuff",
+    "label": "Busted Stuff",
+    "color": "#A62D1C",
+    "year": "July 16, 2002",
+    "riaa": "2x Multi-Platinum August 29, 2002\nGold August 29, 2002",
+    "billboard": "#1",
+    "grammy": "Won a Grammy Award for BEST MALE ROCK VOCAL PERFORMANCE for the track \"Gravedigger\"",
+    "fact": "\"Busted Stuff\" is the first record performed entirely by the core members of the DMB; there are no featured performers."
+  },
+  {
+    "data": "everyday",
+    "label": "Everyday",
+    "color": "#88A9B6",
+    "year": "February 27, 2001",
+    "riaa": "3x Multi-Platinum January 8, 2002\nGold April 2, 2001",
+    "billboard": "#1",
+    "grammy": "",
+    "fact": "This is the first DMB record that features Dave Matthews playing electric guitar."
+  },
+  {
+    "data": "beforeTheseCrowdedStreets",
+    "label": "Before These Crowded Streets",
+    "color": "#4C77AB",
+    "year": "April 28, 1998",
+    "riaa": "4x Multi-Platinum June 15, 2018\nGold June 2, 1998",
+    "billboard": "#1",
+    "grammy": "",
+    "fact": "The album debuted at No. 1 on the Billboard charts, ending the \"Titanic\" soundtrack's 16-week run at the top."
+  },
+  {
+    "data": "crash",
+    "label": "Crash",
+    "color": "#363883",
+    "year": "April 30, 1996",
+    "riaa": "7x Multi-Platinum March 16, 2000\nGold July 9, 1996",
+    "billboard": "#2",
+    "grammy": "Won a Grammy Award for  BEST ROCK PERFORMANCE BY A DUO OR GROUP WITH VOCAL for the track \"So Much to Say\"\n",
+    "fact": "By 2000, \"Crash\" had sold seven million copies making it DMB's bestselling album to date."
+  },
+  {
+    "data": "underTheTableAndDreaming",
+    "label": "Under the Table and Dreaming",
+    "color": "#362254",
+    "year": "September 27, 1994",
+    "riaa": "6x Multi-Platinum March 16, 2000\nGold March 7, 1995 ",
+    "billboard": "#11",
+    "grammy": "",
+    "fact": "On DMB's first major-label album, the lead single, \"What Would You Say\", was nominated for two Grammy awards — Best Rock Vocal Performance by a Duo or Group and Best Music Video (Short Form)."
   }
 ]
