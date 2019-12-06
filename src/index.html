@@ -15,7 +15,12 @@
     <responsive-child>
       <!-- content goes here -->
     <div class="content">
-   
+   <div class="headCopy"> 
+      <p class="chatter">
+          Dave Matthews Band’s second year of Hall of Fame eligibility comes 25 years after the release of its first major-label album, “Under the Table and Dreaming.” The trade of bootleg concert recordings among fans had elevated Dave Matthews Band to idol status in the ‘90s, but it’s the band’s nine studio albums that likely caught the Rock Hall’s eye. The albums show how the band has evolved over the years, from the folk-rock spirit of “Busted Stuff” to the more pop-leaning “Everyday.” DMB’s seven most recent studio albums all debuted at No. 1 on the Billboard charts, making Dave Matthews Band the group with the most consecutive No. 1 debuts, topped only by solo acts Eminem and Kanye West. 
+          Explore the studio albums and see the impact the band has made. 
+      </p>
+   </div>
     <div class="albumContainer">
     <div class="albumButtons">
         <% var albums = [
@@ -33,7 +38,16 @@
        <% albums.forEach(function(album) { %>
         <li>
           <button type="button" class="albumButton <%= album.data %>" data-category="<%= album.data %>">
-              <span class="albumButtonLabel"><%= album.label %></span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 32.2"><title>spine</title>
+              <line x1="5.75" y1="31.45" x2="5.75" y2="0.75" fill="none" stroke="#7b7b7b" stroke-linejoin="round"/>
+              <line x1="342.35" y1="31.45" x2="5.75" y2="31.45" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+              <line x1="342.35" y1="0.75" x2="342.35" y2="31.45" fill="none" stroke="#7b7b7b" stroke-linejoin="round"/>
+              <line x1="5.75" y1="0.75" x2="342.35" y2="0.75" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+              <rect x="12.55" y="3.85" width="323.1" height="24.5" fill="#fff" stroke="#7b7b7b" stroke-linejoin="round"/>
+              <path d="M5.75.75H3.25a2.48,2.48,0,0,0-2.5,2.5V29a2.48,2.48,0,0,0,2.5,2.5h2.8" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+              <path d="M342.25.75h2.5a2.48,2.48,0,0,1,2.5,2.5V29a2.48,2.48,0,0,1-2.5,2.5h-2.7" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"><%= album.label %></text>
+            </svg>
           </button>
         </li>
        <% }) %>
@@ -41,14 +55,19 @@
     </div><!--End of album buttons-->
 
     <div class="albumDetails">
-      <p><span class="infoTitle"></span></p>
-      <p class="infoTitle">Release year: <span class="year"></span></p>
-      <p class="riaa"></p>
-      <p class="billboard"></p>
-      <p class="grammy"></p>
-      <p class="fact"></p>
-    </div><!--End album info-->
-
+        <img class="defaultImage" src="assets/cd.png">
+        <div class="info">
+          <img class="booklet" src="assets/book.png">
+          <div class="infoText">
+              <p><span class="infoTitle"></span></p>
+              <p class="yearTitle">Release year: <span class="year"></span></p>
+              <p><span class="riaa"></span></p>
+              <p>Peak position on Billboard top 200 albums: <span class="billboard"></span></p>
+              <p class="grammy"></p>
+              <p class="fact"></p>
+          </div>
+        </div>
+    </div>
   </div><!--end of album container-->
  
 
@@ -73,7 +92,7 @@
 
     <div class="results">
       <p class="stat"></p>
-      <div class="svg-container"><svg width="600" height="500"></svg></div>
+      <div class="svg-container"></div>
     </div> 
 
   </div> <!--End of content-->

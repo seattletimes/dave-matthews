@@ -4,17 +4,26 @@
     border-top : 1px solid @df-light-gray;
     border-bottom: 1px solid @df-light-gray;
     width: 100%;
+    font-family: @df-sans;
+}
+
+.headCopy{
+    padding: 0 10px;
+    max-width: 630px;
+    margin: 14px auto;
+    .chatter{
+        font-size: 15px;
+    }
 }
 
 .albumContainer{
-    text-align: center;
     width: 100%;
 }
 
 .albumButtons{
-    float: left;
     position: relative;
     margin-right: 50px;
+    float:left;
     ul{
         list-style-type: none;
         padding: 0;
@@ -24,36 +33,55 @@
         cursor: pointer;
         font-size: 16px;
         width: 254px;
-        height: 22px;
+        height: 24px;
         margin: 0 0 1px 0;
         outline: none;
         border-radius: 4px;
     }
-    .beforeTheseCrowdedStreets, .standUp, .comeTomorrow{
-        color: #fdfdfd;
+    .checked{
+        transform: translateX(42px);
+        transition: all 1s ease-in-out;
     }
 }
 
 .albumDetails{
-    //display: flex;
-    text-align: right;
-    float: left;
     position: relative;
+    margin-left: 20%;
+    .defaultImage{
+        width: 20%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    .info{
+        // display: none;
+        position: absolute;
+        left: 0;
+        top: 0;
+        .booklet{
+            width: 100%;
+        }
+        .infoText{
+            margin-left: 3%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: "16px";
+            .infoTitle{
+                font-weight: bold;
+            }
+            .year{
+                font-style: italic;
+                color: #5f5f5f;
+            }
+        }
+    }
 }
 
-
-
-
-
-.checked{
-    transform: translateX(42px);
-    transition: all 1s ease-in-out;
-}
 
 .vote {
     text-align: center;
     width: 100%;
-    clear: both;
     .pollText{
         width: 100%;
         clear: both;
@@ -70,11 +98,11 @@
     display: none;
   }
   .bar {
-    fill: steelblue;
+    fill: #4A656D;
   }
   
   .bar:hover {
-    fill: brown;
+    fill: #1F3D42;
   }
   
   .axis--x path {
