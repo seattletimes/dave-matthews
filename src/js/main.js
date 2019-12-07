@@ -163,7 +163,7 @@ function showInfo(data, tabletop) {
     totals.sort(function(a, b){
         return d3.ascending(a.count, b.count);
     }); 
-    var margin = {top: 20, right: 180, bottom: 20, left: 90},
+    var margin = {top: 20, right: 20, bottom: 20, left: 90},
         width = window.innerWidth - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -207,34 +207,19 @@ function showInfo(data, tabletop) {
         .attr("height", y.bandwidth());
 
 
-        bars.append("text")
+    var labels = bars.append("text")
             .text(function(d){
                 return d.count;
             })
             .attr("class", "value")
             .attr("x", function(d) {
-                return x(d.count);
+                return x(d.count) - 8;
             })
             .attr("y", function(d) {
-                return y(d.label);
-            });
-            // .attr("y",  y.bandwidth() / 2)
-            // .attr("text-anchor", "end")
-
-            // .attr("x", function(d){
-            //     var width = this.getBBox().width;
-            //     return Math.max(width, myScale(d.count));
-            // });
-
-    // bars.append("text")
-    //     .text(function(d) {
-    //         console.log(d);
-    //         return d.count * allVotes.length
-    //     })
-    //     .attr("y", function(d) {
-    //         yval = 
-    //         return y(d.label)*10;
-    //     });
+                return 28 + y(d.label);
+            })
+            .attr("text-anchor", "end")
+            .attr("fill", "#ffffff");
 
     var formatPercent = d3.format(".0%");
 
@@ -245,12 +230,7 @@ function showInfo(data, tabletop) {
     yAxis.selectAll('.tick line')
         .attr("stroke", "0");
     yAxis.select(".domain")
-        .attr("stroke", "0")
-
-    var xAxis = svg.append("g")
-        .attr("transform", "translate(0,460)")
-        .call(d3.axisBottom(x));
-
+        .attr("stroke", "0");
 
     var insertLinebreaks = function (d) {
             var el = d3.select(this);
