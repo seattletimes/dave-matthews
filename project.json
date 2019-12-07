@@ -6,7 +6,7 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2019/features/dave-matthews-band"
     }
   },
   "title": "",
@@ -18,5 +18,5 @@
   "sheets": ["1odzOwj1yo6HAwE4pMyvH4OkG2CR6cNcnXouPSPoLHe8"],
   "docs": [],
   "embedded": true,
-  "production": false
+  "production": true
 }
