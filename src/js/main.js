@@ -166,21 +166,14 @@ function showInfo(data, tabletop) {
     var totals = tally(allVotes);
     totals.sort(function(a, b){
         return d3.ascending(a.count, b.count);
-    });
-      
- 
-   var margin = {top: 20, right: 20, bottom: 20, left: 100},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
-
- 
-    // svg.attr("preserveAspectRatio", "xMinYMin meet")
-    //     .attr("viewBox", "0 0 600 400");
+    }); 
+    var margin = {top: 20, right: 20, bottom: 20, left: 100},
+        width = 960 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
 
     var y = d3.scaleBand()
         .range([height, 0])
         .padding(0.1);
-
     var myScale = d3.scaleLinear();    
     var x = myScale
         .range([0, width]);
@@ -202,7 +195,7 @@ function showInfo(data, tabletop) {
             (height + margin.top + margin.bottom)
         );
    
-    x.domain([0, d3.max(totals, function(d){ return d.count; })])
+    x.domain([0, 1]);
     y.domain(totals.map(function(d) { return d.label; }));
 
 
@@ -233,24 +226,23 @@ function showInfo(data, tabletop) {
 
     // bars.append("text")
     //     .text(function(d) {
+    //         console.log(d);
     //         return d.count * allVotes.length
     //     })
     //     .attr("y", function(d) {
-    //         console.log(d);
-    //         console.log(y);
+    //         yval = 
     //         return y(d.label)*10;
     //     });
-    // svg.selectAll(".bar")
-    //     .data(totals)
-    //     .enter().append("rect")
-    //     .attr("class", "bar")
-    //     .attr("width", function(d) {return x(d.count); } )
-    //     .attr("y", function(d) { return y(d.label); })
-    //     .attr("height", y.bandwidth());
+
+    var formatPercent = d3.format(".0%");
 
     // add the y Axis
     svg.append("g")
         .call(d3.axisLeft(y));
+
+        svg.append("g")
+        .attr("transform", "translate(0,460)")
+        .call(d3.axisBottom(x));
 
 
     var insertLinebreaks = function (d) {
