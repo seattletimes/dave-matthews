@@ -46,7 +46,7 @@ function albumButton(){
         }
         this.classList.add("checked");
         displayAlbuminfo(this.classList[1]);
-        info.style.display = "inline";
+        info.classList.add("shown");
     }
     else{
         this.classList.remove("checked");
