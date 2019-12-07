@@ -25,53 +25,54 @@
    </div>
    <div class="extraContainer">
     <div class="albumContainer">
-    <div class="albumButtons">
-        <% var albums = [
-        { data: "comeTomorrow", label: "Come Tomorrow"}, 
-        { data: "awayFromTheWorld", label: "Away From the World" },
-        { data: "bigWhiskey", label: "Big Whiskey & the GrooGrux King" }, 
-        { data: "standUp", label: "Stand Up" },
-        { data: "bustedStuff", label: "Busted Stuff" },
-        { data: "everyday", label: "Everyday" },
-        { data: "beforeTheseCrowdedStreets", label: "Before These Crowded Streets" },
-        { data: "crash", label: "Crash"},
-        { data: "underTheTableAndDreaming", label: "Under The Table and Dreaming" }
-      ] %>
-      <ul>
-       <% albums.forEach(function(album) { %>
-        <li>
-          <button type="button" class="albumButton <%= album.data %>" data-category="<%= album.data %>">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 32.2"><title>spine</title>
-              <line x1="5.75" y1="31.45" x2="5.75" y2="0.75" fill="none" stroke="#7b7b7b" stroke-linejoin="round"/>
-              <line x1="342.35" y1="31.45" x2="5.75" y2="31.45" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
-              <line x1="342.35" y1="0.75" x2="342.35" y2="31.45" fill="none" stroke="#7b7b7b" stroke-linejoin="round"/>
-              <line x1="5.75" y1="0.75" x2="342.35" y2="0.75" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
-              <rect x="12.55" y="3.85" width="323.1" height="24.5" fill="#fff" stroke="#7b7b7b" stroke-linejoin="round"/>
-              <path d="M5.75.75H3.25a2.48,2.48,0,0,0-2.5,2.5V29a2.48,2.48,0,0,0,2.5,2.5h2.8" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
-              <path d="M342.25.75h2.5a2.48,2.48,0,0,1,2.5,2.5V29a2.48,2.48,0,0,1-2.5,2.5h-2.7" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
-              <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"><%= album.label %></text>
-            </svg>
-          </button>
-        </li>
-       <% }) %>
-      </ul>
-    </div><!--End of album buttons-->
+      <div class="albumButtons">
+          <% var albums = [
+          { data: "comeTomorrow", label: "Come Tomorrow"}, 
+          { data: "awayFromTheWorld", label: "Away From the World" },
+          { data: "bigWhiskey", label: "Big Whiskey & the GrooGrux King" }, 
+          { data: "standUp", label: "Stand Up" },
+          { data: "bustedStuff", label: "Busted Stuff" },
+          { data: "everyday", label: "Everyday" },
+          { data: "beforeTheseCrowdedStreets", label: "Before These Crowded Streets" },
+          { data: "crash", label: "Crash"},
+          { data: "underTheTableAndDreaming", label: "Under The Table and Dreaming" }
+        ] %>
+        <ul>
+         <% albums.forEach(function(album) { %>
+          <li>
+            <button type="button" class="albumButton <%= album.data %>" data-category="<%= album.data %>">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 348 32.2"><title>spine</title>
+                <line x1="5.75" y1="31.45" x2="5.75" y2="0.75" fill="none" stroke="#7b7b7b" stroke-linejoin="round"/>
+                <line x1="342.35" y1="31.45" x2="5.75" y2="31.45" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+                <line x1="342.35" y1="0.75" x2="342.35" y2="31.45" fill="none" stroke="#7b7b7b" stroke-linejoin="round"/>
+                <line x1="5.75" y1="0.75" x2="342.35" y2="0.75" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+                <rect x="12.55" y="3.85" width="323.1" height="24.5" fill="#fff" stroke="#7b7b7b" stroke-linejoin="round"/>
+                <path d="M5.75.75H3.25a2.48,2.48,0,0,0-2.5,2.5V29a2.48,2.48,0,0,0,2.5,2.5h2.8" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+                <path d="M342.25.75h2.5a2.48,2.48,0,0,1,2.5,2.5V29a2.48,2.48,0,0,1-2.5,2.5h-2.7" fill="none" stroke="#000" stroke-linejoin="round" stroke-width="1.5"/>
+                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle"><%= album.label %></text>
+              </svg>
+            </button>
+          </li>
+         <% }) %>
+        </ul>
+      </div><!--End of album buttons-->
 
-    <div class="albumDetails">
-        <img class="defaultImage" src="assets/cd.png">
-        <div class="info">
-          <img class="booklet" src="assets/book.png">
-          <div class="infoText">
-              <p><span class="infoTitle"></span></p>
-              <p class="yearTitle">Release year: <span class="year"></span></p>
-              <p><span class="riaa"></span></p>
-              <p>Peak position on Billboard top 200 albums: <span class="billboard"></span></p>
-              <p class="grammy"></p>
-              <p class="fact"></p>
+      <div class="albumDetails">
+          <img class="defaultImage" src="./assets/cd.png">
+          <div class="info">
+            <img class="booklet booklet--desktop" src="./assets/book.png">
+            <img class="booklet booklet--mobile" src="./assets/halfBook.png">
+            <div class="infoText">
+                <p><span class="infoTitle"></span></p>
+                <p class="yearTitle">Release year: <span class="year"></span></p>
+                <p><span class="riaa"></span></p>
+                <p>Peak position on Billboard top 200 albums: <span class="billboard"></span></p>
+                <p class="grammy"></p>
+                <p class="fact"></p>
+            </div>
           </div>
-        </div>
+      </div>
     </div>
-  </div>
   </div><!--end of album container-->
  
 
