@@ -145,10 +145,6 @@ function tally(voteData){
                 }
             }
         }
-        for(var x = 0; x < totals.length; x++){
-            var percent = totals[x].count/voteData.length;
-            totals[x].count = percent;
-         }
     }
     return totals;
 }  

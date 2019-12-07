@@ -13,14 +13,13 @@
       <%= t.include("partials/_gtmNoScript.html") %>
     <% } %>
     <responsive-child>
+      <main class="interactive">
       <!-- content goes here -->
     <div class="content">
    <div class="headCopy">
-     <p class="title">Explore Dave Matthews Band’s studio albums</p> 
+     <p class="headTitle">Explore Dave Matthews Band’s studio albums</p> 
       <p class="chatter">
           Dave Matthews Band’s second year of Rock & Roll Hall of Fame eligibility comes 25 years after the release of its first major-label album, “Under the Table and Dreaming.” The trade of bootleg concert recordings among fans had elevated Dave Matthews Band to idol status in the ‘90s, but it’s the band’s nine studio albums that likely caught the Rock Hall’s eye. The band’s range can be seen in its albums, from the folk-rock spirit of “Crash”, to the elaborate orchestral arrangements on “Big Whiskey & the GrooGrux King.” DMB’s seven most recent studio albums debuted at No. 1 on the Billboard charts, making Dave Matthews Band the group with the most No. 1 consecutive debuts, topped only by solo acts Eminem and Kanye West.
-        <br><br>
-        Learn more about the studio albums
         </p>
    </div>
    <div class="extraContainer">
@@ -67,11 +66,11 @@
             <img class="booklet show-on-mobile" src="./assets/halfBook.png">
             <div class="infoText">
                 <p><span class="infoTitle"></span></p>
-                <p class="yearTitle">Release date: <span class="year"></span></p>
-                <p><span class="riaa"></span></p>
-                <p>Peak position on Billboard top 200 albums: <span class="billboard"></span></p>
+                <p class="yearTitle"><span class="title">Release date:</span> <span class="year"></span></p>
+                <p><span class="title">Album award(s):</span> <span class="riaa"></span></p>
                 <p class="grammy"></p>
-                <p class="fact"></p>
+                <p><span class="title">Peak position on Billboard top 200 albums:</span> <span class="billboard"></span></p>
+                <p><span class="title">Album features: </span><span class="fact"></span></p>
             </div>
           </div>
       </div>
@@ -80,7 +79,7 @@
  
 
     <div class="vote">
-      <div class = "pollText"><p>Reader poll, what is Dave Matthews Bands best album?</p></div>
+      <div class = "pollText"><p>Reader poll: What is Dave Matthews Band's best album?</p></div>
       <div class = "voteForm">
       <form name="submit-to-google-sheet" onsubmit="return false">
       <!-- <div class="st-input-select dropdown"> -->
@@ -103,13 +102,15 @@
       <p class="stat"></p>
       <div class="svg-container"><svg class="pollSvg"></svg></div>
     </div> 
-  </div> <!--End of content-->
+
     <aside class="footer">
         <p class="source">Reader poll runs from Dec. 9, 2019 through Dec. 16, 2019.<br>Source: Times reporting</p>
         <p class="credit">Miranda Hardy / The Seattle Times</p>
       </aside>
- 
+  </div> <!--End of content-->
 
+ 
+</main>
     </responsive-child>
 
    
