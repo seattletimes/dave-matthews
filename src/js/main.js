@@ -127,7 +127,7 @@ function tally(voteData){
     if(voteData.length > 0){  
         var totals =      [   { name: "underTheTableAndDreaming", label: "Under  the Table  and Dreaming", count: 0},
         { name: "crash", label: "Crash", count: 0},
-        { name: "beforeTheseCrowdedStreets", label: "Before These  Crowded Streets", count: 0},
+        { name: "beforeTheseCrowdedStreets", label: "Before These  Crowded  Streets", count: 0},
         { name: "everyday", label: "Everyday", count: 0 },
         { name: "bustedStuff", label: "Busted  Stuff", count: 0},
         { name: "standUp", label: "Stand Up", count: 0},
@@ -167,13 +167,14 @@ function showInfo(data, tabletop) {
     totals.sort(function(a, b){
         return d3.ascending(a.count, b.count);
     }); 
-    var margin = {top: 20, right: 20, bottom: 20, left: 100},
-        width = 960 - margin.left - margin.right,
+    var margin = {top: 20, right: 20, bottom: 20, left: 90},
+        width = window.innerWidth - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
     var y = d3.scaleBand()
         .range([height, 0])
         .padding(0.1);
+   
     var myScale = d3.scaleLinear();    
     var x = myScale
         .range([0, width]);
@@ -195,7 +196,7 @@ function showInfo(data, tabletop) {
             (height + margin.top + margin.bottom)
         );
    
-    x.domain([0, 1]);
+    x.domain([0, d3.max(totals, function(d) { return d.count; })]);
     y.domain(totals.map(function(d) { return d.label; }));
 
 
@@ -257,8 +258,9 @@ function showInfo(data, tabletop) {
             }
         };
 
-    svg.selectAll('text').each(insertLinebreaks).attr("font-size", "12px");
+    svg.selectAll('text').each(insertLinebreaks).attr("font-size", "12px").attr("font-weight", "bold");
 
    
   }
 
+  window.addEventListener("resize", init);

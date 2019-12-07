@@ -24,6 +24,7 @@
 }
 
 .extraContainer{
+    max-width: 1000px;
     width: 90%;
     margin: auto;
 
@@ -48,7 +49,7 @@
         font-weight: bold;
         width: 254px;
         height: 28px;
-        margin: 0 0 1px;
+        margin: 0 50px 10px;
         outline: none;
         border-radius: 4px;
         padding: 2px 0;
@@ -121,6 +122,7 @@
     .pollText{
         width: 100%;
         clear: both;
+        font-weight: bold;
     }
     .voteForm{
         width: 100%;
@@ -144,6 +146,10 @@
          margin: 2px;
     }
 }
+.endDate{
+    font-style: italic;
+    color: #5f5f5f;
+}
 
 .svg-container{
     text-align: center;
@@ -151,11 +157,11 @@
     display: none;
   }
   .bar {
-    fill: #4A656D;
+    fill: #0E1D3F;
   }
   
   .bar:hover {
-    fill: #1F3D42;
+    fill: #0B2B63;
   }
   
   .axis--x path {
@@ -163,3 +169,29 @@
   }
 
 
+  .footer {
+    font-family: @df-sans;
+    color: @df-middle-gray;
+    p {
+      margin: 5px;
+    }
+    .source {
+      font-size: 14px;
+      font-style: italic;
+      @media (min-width: 400px) {
+        float: left;
+      }
+    }
+    .credit {
+      font-size: 13px;
+      text-transform: uppercase;
+      @media (min-width: 400px) {
+        float: right;
+      }
+    }
+    &::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
