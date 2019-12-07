@@ -167,7 +167,7 @@ function showInfo(data, tabletop) {
     totals.sort(function(a, b){
         return d3.ascending(a.count, b.count);
     }); 
-    var margin = {top: 20, right: 20, bottom: 20, left: 90},
+    var margin = {top: 20, right: 180, bottom: 20, left: 90},
         width = window.innerWidth - margin.left - margin.right,
         height = 500 - margin.top - margin.bottom;
 
@@ -211,19 +211,24 @@ function showInfo(data, tabletop) {
         .attr("height", y.bandwidth());
 
 
-        // bars.append("text")
-        //     .attr("class", "value")
-        //     .attr("y",  y.bandwidth() / 2)
-        //     // .attr("dx", -valueMargin + labelWidth) //margin right
-        //     // .attr("dy", ".35em") //vertical align middle
-        //     .attr("text-anchor", "end")
-        //     .text(function(d){
-        //         return ((d.count*allVotes.length));
-        //     })
-        //     .attr("x", function(d){
-        //         var width = this.getBBox().width;
-        //         return Math.max(width, myScale(d.count));
-        //     });
+        bars.append("text")
+            .text(function(d){
+                return d.count;
+            })
+            .attr("class", "value")
+            .attr("x", function(d) {
+                return x(d.count);
+            })
+            .attr("y", function(d) {
+                return y(d.label);
+            });
+            // .attr("y",  y.bandwidth() / 2)
+            // .attr("text-anchor", "end")
+
+            // .attr("x", function(d){
+            //     var width = this.getBBox().width;
+            //     return Math.max(width, myScale(d.count));
+            // });
 
     // bars.append("text")
     //     .text(function(d) {
@@ -238,10 +243,15 @@ function showInfo(data, tabletop) {
     var formatPercent = d3.format(".0%");
 
     // add the y Axis
-    svg.append("g")
+    var yAxis = svg.append("g")
         .call(d3.axisLeft(y));
 
-        svg.append("g")
+    yAxis.selectAll('.tick line')
+        .attr("stroke", "0");
+    yAxis.select(".domain")
+        .attr("stroke", "0")
+
+    var xAxis = svg.append("g")
         .attr("transform", "translate(0,460)")
         .call(d3.axisBottom(x));
 
@@ -258,7 +268,7 @@ function showInfo(data, tabletop) {
             }
         };
 
-    svg.selectAll('text').each(insertLinebreaks).attr("font-size", "12px").attr("font-weight", "bold");
+    svg.selectAll('.tick text').each(insertLinebreaks).attr("font-size", "12px").attr("font-weight", "bold");
 
    
   }
