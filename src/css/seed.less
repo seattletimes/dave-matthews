@@ -19,27 +19,36 @@
     }
 }
 
+.extraContainer{
+    width: 90%;
+    margin: auto;
+
+}
 .albumContainer{
     width: 100%;
+    
 }
 
 .albumButtons{
     position: relative;
-    margin-right: 50px;
+    margin-right: 100px;
     float:left;
     ul{
         list-style-type: none;
         padding: 0;
     }
     .albumButton{
+        font-family: @df-sans;
         border:none;
         cursor: pointer;
-        font-size: 16px;
+        font-size: 20px;
+        font-weight: bold;
         width: 254px;
-        height: 32px;
+        height: 28px;
         margin: 0 0 1px 0;
         outline: none;
         border-radius: 4px;
+        padding: 2px 0;
     }
     .checked{
         transform: translateX(42px);
@@ -49,7 +58,7 @@
 
 .albumDetails{
     position: relative;
-    margin-left: 20%;
+    margin-left: 28%;
     
     .defaultImage{
         width: 20%;
@@ -62,22 +71,25 @@
         position: absolute;
         left: 0;
         top: 0;
-        width: 60%;
+        width: 608px;
         .booklet{
-            width: 100%;
+            width: 608px;
         }
         .infoText{
+            padding-top: 3%;
             margin-left: 3%;
+            margin-right: 3%;
             position: absolute;
             left: 0;
             top: 0;
-            font-size: 18px;
+            font-size: 15px;
             p{
 
                 margin: 6px;
             }
             .infoTitle{
                 font-weight: bold;
+                font-size: 18px;
             }
             .year{
                 font-style: italic;
@@ -89,6 +101,7 @@
 
 
 .vote {
+    font-family: @df-sans;
     text-align: center;
     width: 100%;
     .pollText{
@@ -102,17 +115,17 @@
     .voteSelect{
         height: 32px;
         font-size: 16px;
-        border: 1px solid #424648;
-        border-radius: 10px;
+        border: 2px solid #666666;
+        border-radius: 8px;
     }
     .voteButton{
         font-size: 16px;
         height: 32px;
         outline: none;
-        border: 1px solid #424648;
+        border: 2px solid #666666;
         background-color: white;
          padding: 2px 8px;
-         border-radius: 10px;
+         border-radius: 8px;
          cursor: pointer;
          margin: 2px;
     }
