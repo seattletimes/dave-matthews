@@ -1,5 +1,16 @@
 @import "seattletimes";
 
+@media @tablet {
+    .show-on-desktop {
+        display: none;
+    }
+}
+@media @desktop-up {
+    .show-on-mobile {
+        display: none;
+    }
+}
+
 .content{
     border-top : 1px solid @df-light-gray;
     border-bottom: 1px solid @df-light-gray;
@@ -63,8 +74,17 @@
     width: 100%;
     max-width: 608px;
     .defaultImage{
+        position: relative;
         margin: auto;
         max-width: 300px;
+        p {
+            position: absolute;
+            text-align: center;
+            top: 25%;
+        }
+        img {
+            opacity: 0.2;
+        }
     }
     .info{
         display: none;
@@ -78,16 +98,6 @@
             top: 0;
             left: 0;
             width: 100%;
-        }
-        @media @tablet {
-            .booklet--desktop {
-                display: none;
-            }
-        }
-        @media @desktop-up {
-            .booklet--mobile {
-                display: none;
-            }
         }
         .infoText{
             padding-top: 3%;
