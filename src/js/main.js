@@ -87,30 +87,36 @@ function getCookie(name) {
 }
 
 function submitHandler(e){
-    var vote = select.value;
 
-    if(vote == "default"){
-        verify.innerText = "Please select an album";
-    }
-    else if(getCookie("vote")){
-        verify.innerText = "Looks like you've already voted, come back tomorrow to vote again";
-        init();
-        svgContainer.style.display = "inline-block";
-    }
-    else{
-        verify.innerText = "";
-        var d = new Date();
-        d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
+    verify.innerText = "Voting for this poll has closed";
+    init();
+    svgContainer.style.display = "inline-block";
 
-        document.cookie = "vote="+vote + "; expires=" + d.toGMTString() + ";"
+//Old code that ran the voting
+    // var vote = select.value;
+
+    // if(vote == "default"){
+    //     verify.innerText = "Please select an album";
+    // }
+    // else if(getCookie("vote")){
+    //     verify.innerText = "Looks like you've already voted, come back tomorrow to vote again";
+    //     init();
+    //     svgContainer.style.display = "inline-block";
+    // }
+    // else{
+    //     verify.innerText = "";
+    //     var d = new Date();
+    //     d.setTime(d.getTime() + 24 * 60 * 60 * 1000);
+
+    //     document.cookie = "vote="+vote + "; expires=" + d.toGMTString() + ";"
         
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message));
-        setTimeout(function() { init(); }, 1000);
-        svgContainer.style.display = "inline-block";
-    }
+    //     e.preventDefault();
+    //     fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+    //       .then(response => console.log('Success!', response))
+    //       .catch(error => console.error('Error!', error.message));
+    //     setTimeout(function() { init(); }, 1000);
+    //     svgContainer.style.display = "inline-block";
+    // }
 }
 
 form.addEventListener('submit', function(a){
